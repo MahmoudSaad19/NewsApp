@@ -18,7 +18,7 @@ import java.util.List;
 
 public class NewsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<NewsData>> {
 
-    private static final String REQUEST_URL = "https://content.guardianapis.com/search?api-key=49fe4d7c-ccec-45e8-b2c2-0700236d5273" ;
+    private static final String REQUEST_URL = "https://content.guardianapis.com/search?" ;
 
     private NewsAdapter mAdapter;
     private TextView mEmptyStateTextView;
@@ -33,7 +33,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         // Find a reference to the {@link ListView} in the layout
         ListView listView = findViewById(R.id.list);
 
-        // Create a new adapter that takes an empty list of earthquakes as input
         mAdapter = new NewsAdapter(this, new ArrayList<NewsData>());
 
         // Set the adapter on the {@link ListView}
@@ -43,8 +42,6 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
         mEmptyStateTextView = findViewById(R.id.empty_view);
         listView.setEmptyView(mEmptyStateTextView);
 
-        // Set an item click listener on the ListView, which sends an intent to a web browser
-        // to open a website with more information about the selected earthquake.
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
@@ -99,6 +96,10 @@ public class NewsActivity extends AppCompatActivity implements LoaderManager.Loa
 
         // buildUpon prepares the baseUri that we just parsed so we can add query parameters to it
         Uri.Builder uriBuilder = baseUri.buildUpon();
+        //api-key=49fe4d7c-ccec-45e8-b2c2-0700236d5273
+        uriBuilder.appendQueryParameter("api-key","49fe4d7c-ccec-45e8-b2c2-0700236d5273");
+        //show-tags=contributor
+        uriBuilder.appendQueryParameter("show-tags","contributor");
 
         return new NewsLoader(this, uriBuilder.toString());
 

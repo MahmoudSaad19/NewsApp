@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="16dp">
 
     <TextView
         android:id="@+id/section_name"
-        android:text="Technology"
+        tools:text="Technology"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/holo_blue_dark"
@@ -15,7 +16,7 @@
 
     <TextView
         android:id="@+id/title"
-        android:text="this is a new article"
+        tools:text="this is a new article"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,12 +25,19 @@
 
     <TextView
         android:id="@+id/time"
-        android:text="7:00Am"
+        tools:text="7:00Am"
         android:layout_gravity="end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/textColortime"
+        android:textColor="@color/textColorTime"
         android:textSize="12sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/author"
+        android:layout_gravity="end"
+        tools:text="author name" />
 
 
 </LinearLayout>

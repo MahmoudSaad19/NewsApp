@@ -5,6 +5,6 @@
     <color name="colorAccent">#D81B60</color>
 
     <!-- Text color for the details in the list item -->
-    <color name="textColortime">#B4BAC0</color>
+    <color name="textColorTime">#B4BAC0</color>
 
 </resources>
